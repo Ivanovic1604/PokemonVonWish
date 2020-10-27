@@ -32,5 +32,5 @@ public class HomeScreenViewController implements Initializable {
     private void btnStartChooseTrainer(ActionEvent event) throws IOException {
         App.setRoot("Poke");
     }
-    
+    //TEST GIT
 }
