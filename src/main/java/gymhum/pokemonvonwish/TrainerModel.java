@@ -5,8 +5,6 @@
  */
 package gymhum.pokemonvonwish;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author ivan
@@ -15,12 +13,20 @@ public class TrainerModel {
     
     private String name;
     private int verbleibenePokemon;
-    private ArrayList<PokemonModel> gegnerpokemon;
+    private PokemonModel Pokemon;
 
-    public TrainerModel(String name, int verbleibenePokemon, ArrayList<PokemonModel> gegnerpokemon) {
+    public PokemonModel getPokemon() {
+        return Pokemon;
+    }
+
+    public void setPokemon(PokemonModel Pokemon) {
+        this.Pokemon = Pokemon;
+    }
+
+    public TrainerModel(String name, int verbleibenePokemon, PokemonModel Pokemon, PokemonModel Poke2, PokemonModel Poke3) {
         setName(name);
         setVerbleibenePokemon(verbleibenePokemon);
-        this.gegnerpokemon = new ArrayList<PokemonModel>();
+        setPokemon(Pokemon);
     }
 
     public String getName() {
@@ -39,13 +45,7 @@ public class TrainerModel {
         this.verbleibenePokemon = verbleibenePokemon;
     }
 
-    public ArrayList<PokemonModel> getGegnerpokemon() {
-        return gegnerpokemon;
-    }
-
-    public void setGegnerpokemon(ArrayList<PokemonModel> gegnerpokemon) {
-        this.gegnerpokemon = gegnerpokemon;
-    }
+   
     
     
     

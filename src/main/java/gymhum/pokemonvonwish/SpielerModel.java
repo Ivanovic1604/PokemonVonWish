@@ -14,12 +14,12 @@ public class SpielerModel {
     
     private String name;
     private int verbleibednePokemon;
-    private ArrayList<PokemonModel> spielerpokemon;
+    private PokemonModel Pokemon;
 
-    public SpielerModel(String name, int verbleibednePokemon, ArrayList<PokemonModel> spielerpokemon) {
+    public SpielerModel(String name, int verbleibednePokemon, PokemonModel Pokemon, PokemonModel Poke2, PokemonModel Poke3) {
         setName(name);
         setVerbleibednePokemon(verbleibednePokemon);
-        this.spielerpokemon = new ArrayList<PokemonModel>();
+        setPokemon(Pokemon);
     }
     
     
@@ -40,12 +40,14 @@ public class SpielerModel {
         this.verbleibednePokemon = verbleibednePokemon;
     }
 
-    public ArrayList<PokemonModel> getSpielerpokemon() {
-        return spielerpokemon;
+    public PokemonModel getPokemon() {
+        return Pokemon;
     }
 
-    public void setSpielerpokemon(ArrayList<PokemonModel> spielerpokemon) {
-        this.spielerpokemon = spielerpokemon;
+    public void setPokemon(PokemonModel Pokemon) {
+        this.Pokemon = Pokemon;
     }
+
+   
     
 }

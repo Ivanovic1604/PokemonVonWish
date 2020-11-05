@@ -30,7 +30,7 @@ public class HomeScreenViewController implements Initializable {
 
     @FXML
     private void btnStartChooseTrainer(ActionEvent event) throws IOException {
-        App.setRoot("Poke");
+        App.setRoot("KampfView");
     }
     //TEST GIT
 }

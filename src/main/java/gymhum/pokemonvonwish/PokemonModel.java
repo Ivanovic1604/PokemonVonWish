@@ -16,13 +16,13 @@ public class PokemonModel {
     private int healthPoints;
     private String name;
     private String level;
-    private ArrayList<MoveModel> moves;
+    private MoveModel moves;
    
-    public PokemonModel(int healthPoints, String name, String level, ArrayList<MoveModel> moves){
+    public PokemonModel(int healthPoints, String name, String level, MoveModel moves, MoveModel moves2, MoveModel moves3, MoveModel moves4){
         setHealthPoints(healthPoints);
         setName(name);
         setLevel(level);
-        this.moves = new ArrayList <MoveModel>();
+        setMoves(moves);
         
 }
     
@@ -53,13 +53,10 @@ public class PokemonModel {
         this.level = level;
     }
 
-    public ArrayList<MoveModel> getMoves() {
-        return this.moves;
-    }
-
-    public void setMoves(ArrayList<MoveModel> moves) {
+    public void setMoves(MoveModel moves){
         this.moves = moves;
     }
-    
-    
+    public MoveModel getMoves(){
+        return this.moves;
+    }
 }
