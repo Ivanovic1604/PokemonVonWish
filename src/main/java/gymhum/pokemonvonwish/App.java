@@ -97,43 +97,53 @@ public class App extends Application {
        App.TrainerMoves.add(new MoveModel("Luftstoß", 100, 0, 15)); // 7 
        // Karpador
        App.TrainerMoves.add(new MoveModel("Platscher", 1, 0, 0)); // 8
-       App.TrainerMoves.add(new MoveModel("PLACEHOLDER", 0 ,0 ,0)); // 8
+       App.TrainerMoves.add(new MoveModel("Platscher", 1, 0, 0)); // 8
+       App.TrainerMoves.add(new MoveModel("Platscher", 1, 0, 0)); // 8
+       App.TrainerMoves.add(new MoveModel("Platscher", 1, 0, 0)); // 8
        // Mewtwo
-       App.TrainerMoves.add(new MoveModel("Psychostoß", 100, 0, 0)); // 10
-       App.TrainerMoves.add(new MoveModel("Psychokinese", 90, 0, 0)); // 11
-       App.TrainerMoves.add(new MoveModel("Antik-Kraft", 60, 0, 0)); // 12
-       App.TrainerMoves.add(new MoveModel("AuraSphäre", 80, 0, 0)); // 13
-       // TAUBSI
-       App.TrainerMoves.add(new MoveModel("Tackle", 40, 0, 0)); // 14
+       App.TrainerMoves.add(new MoveModel("Psychostoß", 100, 0, 0)); // 9
+       App.TrainerMoves.add(new MoveModel("Psychokinese", 90, 0, 0)); // 10
+       App.TrainerMoves.add(new MoveModel("Antik-Kraft", 60, 0, 0)); // 11
+       App.TrainerMoves.add(new MoveModel("AuraSphäre", 80, 0, 0)); // 12
+       // Taubsi
+       App.TrainerMoves.add(new MoveModel("Tackle", 40, 0, 0)); // 13
+       App.TrainerMoves.add(new MoveModel("Tackle", 40, 0, 0)); // 13
+       App.TrainerMoves.add(new MoveModel("Tackle", 40, 0, 0)); // 13
+       App.TrainerMoves.add(new MoveModel("Tackle", 40, 0, 0)); // 13
+       //Lucario
+       App.TrainerMoves.add(new MoveModel("Aurasphäre", 80, 0, 0)); // 14
+       App.TrainerMoves.add(new MoveModel("NahKampf", 120, 0 ,0 )); // 15
+       App.TrainerMoves.add(new MoveModel("SternenHieb", 95, 0 ,0));// 16
+       App.TrainerMoves.add(new MoveModel("Drachenpuls", 85, 0, 0)); //17
        
        App.TrainerPokemon.add(new PokemonModel(300, "Glurak", "100", App.getTrainerMoves().get(0), App.getTrainerMoves().get(1), App.getTrainerMoves().get(2), App.getTrainerMoves().get(3)));
        App.TrainerPokemon.add(new PokemonModel(450, "Lugia", "100", App.getTrainerMoves().get(4), App.getTrainerMoves().get(5), App.getTrainerMoves().get(6), App.getTrainerMoves().get(7)));
-       App.TrainerPokemon.add(new PokemonModel(100, "Karpador", "1", App.getTrainerMoves().get(8), App.getTrainerMoves().get(9), App.getTrainerMoves().get(9), App.getTrainerMoves().get(9)));
-       App.TrainerPokemon.add(new PokemonModel(550, "Mewtwo", "100", App.getTrainerMoves().get(10), App.getTrainerMoves().get(11), App.getTrainerMoves().get(12), App.getTrainerMoves().get(13)));
-       App.TrainerPokemon.add(new PokemonModel(100, "Taubsi", "1", App.getTrainerMoves().get(14), App.getTrainerMoves().get(9),  App.getTrainerMoves().get(9),  App.getTrainerMoves().get(9)));
-       App.TrainerPokemon.add(new PokemonModel(100, "Raupy", "1",  App.getTrainerMoves().get(14), App.getTrainerMoves().get(9),  App.getTrainerMoves().get(9),  App.getTrainerMoves().get(9)));
+       App.TrainerPokemon.add(new PokemonModel(100, "Karpador", "1", App.getTrainerMoves().get(8), App.getTrainerMoves().get(9), App.getTrainerMoves().get(10), App.getTrainerMoves().get(11)));
+       App.TrainerPokemon.add(new PokemonModel(550, "Mewtwo", "100", App.getTrainerMoves().get(12), App.getTrainerMoves().get(13), App.getTrainerMoves().get(14), App.getTrainerMoves().get(15)));
+       App.TrainerPokemon.add(new PokemonModel(100, "Taubsi", "1", App.getTrainerMoves().get(16), App.getTrainerMoves().get(17),  App.getTrainerMoves().get(18),  App.getTrainerMoves().get(19)));
+       App.TrainerPokemon.add(new PokemonModel(600, "Lucario", "100", App.getTrainerMoves().get(20), App.getTrainerMoves().get(21),  App.getTrainerMoves().get(22),  App.getTrainerMoves().get(23)));
        //TRAINER 1
-       App.Trainer.add(new TrainerModel("Billy", 3, App.getTrainerPokemon().get(2), App.getTrainerPokemon().get(4), App.getTrainerPokemon().get((5))));
-       App.Trainer.add(new TrainerModel("Günther", 3, App.getTrainerPokemon().get(0), App.getTrainerPokemon().get(1), App.getTrainerPokemon().get(3) ));
+       App.Trainer.add(new TrainerModel("Billy", 6,  App.getTrainerPokemon().get(0), App.getTrainerPokemon().get(1), App.getTrainerPokemon().get(2), App.getTrainerPokemon().get(3), App.getTrainerPokemon().get(4), App.getTrainerPokemon().get((5))));
+       
        
        //Despotar
         App.SpielerMoves.add(new MoveModel("Hyperstrahl", 120, 0, 35)); //0
         App.SpielerMoves.add(new MoveModel("Knirscher", 70, 0, 10)); //1
         App.SpielerMoves.add(new MoveModel("Erdbeben", 100, 0, 20)); //2
         App.SpielerMoves.add(new MoveModel("Wutanfall", 90, 0, 15)); //3
-        App.SpielerPokemon.add(new PokemonModel(500, "Despotar", "100", App.getTrainerMoves().get(0), App.getTrainerMoves().get(1), App.getTrainerMoves().get(2),App.getTrainerMoves().get(3)));
+        App.SpielerPokemon.add(new PokemonModel(550, "Despotar", "100", App.getTrainerMoves().get(0), App.getTrainerMoves().get(1), App.getTrainerMoves().get(2),App.getTrainerMoves().get(3)));
         // Simsala
         App.SpielerMoves.add(new MoveModel("Psychokinese", 90, 0, 10)); //4
         App.SpielerMoves.add(new MoveModel("Traumfresser", 100, 0, 15)); //5
         App.SpielerMoves.add(new MoveModel("Eishieb", 75, 0, 15)); //6
-        App.SpielerMoves.add(new MoveModel("Genesungl", 0, 100, 35)); //7
-        App.SpielerPokemon.add(new PokemonModel(300, "Simsala", "100", App.getTrainerMoves().get(4), App.getTrainerMoves().get(5), App.getTrainerMoves().get(6), App.getTrainerMoves().get(7)));
+        App.SpielerMoves.add(new MoveModel("Genesung", 0, 100, 35)); //7
+        App.SpielerPokemon.add(new PokemonModel(450, "Simsala", "100", App.getTrainerMoves().get(4), App.getTrainerMoves().get(5), App.getTrainerMoves().get(6), App.getTrainerMoves().get(7)));
         // Gengar
-        App.SpielerMoves.add(new MoveModel("Schlecker", 120, -50, 15)); //8
-        App.SpielerMoves.add(new MoveModel("Explosion", 170, -170, 5)); //9
+        App.SpielerMoves.add(new MoveModel("Schlecker", 120, 0, 15)); //8
+        App.SpielerMoves.add(new MoveModel("Explosion", 170, 0, 5)); //9
         App.SpielerMoves.add(new MoveModel("Megasauger", 40, 60, 10)); //10
         App.SpielerMoves.add(new MoveModel("Spukball", 80, 70, 10));//11
-        App.SpielerPokemon.add(new PokemonModel(300, "Gengar", "100", App.getSpielerMoves().get(8), App.getTrainerMoves().get(9), App.getTrainerMoves().get(10), App.getTrainerMoves().get(11)));
+        App.SpielerPokemon.add(new PokemonModel(400, "Gengar", "100", App.getSpielerMoves().get(8), App.getTrainerMoves().get(9), App.getTrainerMoves().get(10), App.getTrainerMoves().get(11)));
         //Trainer
        
        

@@ -23,7 +23,7 @@ public class TrainerModel {
         this.Pokemon = Pokemon;
     }
 
-    public TrainerModel(String name, int verbleibenePokemon, PokemonModel Pokemon, PokemonModel Poke2, PokemonModel Poke3) {
+    public TrainerModel(String name, int verbleibenePokemon, PokemonModel Pokemon, PokemonModel Poke2, PokemonModel Poke3, PokemonModel Poke4, PokemonModel Poke5, PokemonModel Poke6) {
         setName(name);
         setVerbleibenePokemon(verbleibenePokemon);
         setPokemon(Pokemon);
