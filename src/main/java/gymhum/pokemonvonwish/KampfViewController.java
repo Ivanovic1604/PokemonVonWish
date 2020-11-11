@@ -5,6 +5,7 @@
  */
 package gymhum.pokemonvonwish;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -42,16 +43,11 @@ public class KampfViewController implements Initializable {
     public int getnHP() {
         return nHP;
     }
-
     public void setnHP(int nHP) {
         this.nHP = nHP;
     }
     
-    int i = 0;
-   
-    /**
-     * Initializes the controller class.
-     */
+    int i = 0;  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        setsHP(App.getSpielerPokemon().get(0).getHealthPoints());
@@ -61,46 +57,65 @@ public class KampfViewController implements Initializable {
        this.Move3.setText(App.getSpielerMoves().get(2).getName());
        this.Move4.setText(App.getSpielerMoves().get(3).getName());
        System.out.println(sHP);
+       System.out.println(App.getSpielerMoves().size());
     }    
 
-    private void switchTrainerPokemon(){
-            this.PokemonL.setText(App.getTrainerPokemon().get(0).getName());
+    private void switchTrainerPokemon() throws IOException{
+       if(App.getTrainerPokemon().get(0).getLevel() == 2000 && App.getTrainerMoves().get(0).getAP() == 100){
+            App.setRoot("Poke");
+       }
+       else{
+           this.PokemonL.setText(App.getTrainerPokemon().get(0).getName());
             App.getTrainerPokemon().remove(0);
             App.getTrainerMoves().remove(0);
             App.getTrainerMoves().remove(1);
             App.getTrainerMoves().remove(2);
-            App.getTrainerMoves().remove(3);
+            App.getTrainerMoves().remove(3);   
+       }
     }
-    
-    private void TrainerAngriff(){
+    private void TrainerAngriff() throws IOException{
         int g = new Random().nextInt(4);
         int sHP = App.getSpielerPokemon().get(0).getHealthPoints() - App.getTrainerMoves().get(g).getDamage();
         App.getSpielerPokemon().get(0).setHealthPoints(sHP);
-        //System.out.println(g);
-        System.out.println(sHP);
+        //this.tfMenue.setText(App.getTrainerPokemon().get(0).getName() + " " + "hat" + " " + App.getTrainerMoves().get(g).getName + " " + "eingesetzt und hat" + " " + App.getTrainerMoves().get(g).getDamage() + " " + "angerichtet");
+        System.out.println("Größe" + " " + App.getSpielerMoves().size());
+        System.out.println("Anzahl" + " " + App.getSpielerPokemon().size());
+        System.out.println("lvl" + App.getSpielerPokemon().get(0).getLevel());
+        System.out.println("lvlelele" + App.getTrainerPokemon().get(0).getLevel());
+        
         if(sHP < 0){
             switchSpielerPokemon();
-             System.out.println(App.getSpielerPokemon().size());
-        }  
+        }
+        if(App.getTrainerPokemon().get(0).getLevel() == 2000 && App.getTrainerMoves().get(0).getAP() == 100){
+            App.setRoot("HomeScreenView");
+       }
+         if(App.getSpielerPokemon().get(0).getLevel() == 2000 && App.getSpielerMoves().get(0).getAP() == 100){
+            App.setRoot("Poke");
+       }
     }
 
-    private void switchSpielerPokemon(){
-        App.getSpielerPokemon().remove(0);
-        App.getSpielerMoves().remove(0);
-        App.getSpielerMoves().remove(1);
-        App.getSpielerMoves().remove(2);
-        App.getSpielerMoves().remove(3);
-        
-        this.Move1.setText(App.getSpielerMoves().get(0).getName());
-        this.Move2.setText(App.getSpielerMoves().get(1).getName());
-        this.Move3.setText(App.getSpielerMoves().get(2).getName());
-        this.Move4.setText(App.getSpielerMoves().get(3).getName());
-       
-        
-        
-   }
+    private void switchSpielerPokemon() throws IOException{
+            if(App.getSpielerPokemon().get(0).getLevel() == 2000 && App.getSpielerMoves().get(0).getAP() == 100){
+            App.setRoot("Poke");
+       }
+            else{
+                
+            App.getSpielerPokemon().remove(0);
+            App.getSpielerMoves().remove(0);
+            App.getSpielerMoves().remove(1);
+            App.getSpielerMoves().remove(2);
+            App.getSpielerMoves().remove(3);
+            //this.LabelSpieler.setText(App.getSpielerMoves().get(0).getName());
+            this.Move1.setText(App.getSpielerMoves().get(0).getName());
+            this.Move2.setText(App.getSpielerMoves().get(1).getName());
+            this.Move3.setText(App.getSpielerMoves().get(2).getName());
+            this.Move4.setText(App.getSpielerMoves().get(3).getName());                    
+        }
+    } 
     @FXML
-    private void btnMove1(ActionEvent event) {
+    
+    
+    private void btnMove1(ActionEvent event) throws IOException {
         int g = new Random().nextInt(4);
         int nHP = App.getTrainerPokemon().get(0).getHealthPoints() - App.getSpielerMoves().get(0).getDamage();
         App.getTrainerPokemon().get(0).setHealthPoints(nHP);
@@ -108,11 +123,11 @@ public class KampfViewController implements Initializable {
         if(nHP < 0){
             switchTrainerPokemon();  
         }
-       
+       //this.tfMenue.setText(App.getSpielerPokemon().get(0).getName() + " " + "hat" + " " + App.getSpielerMoves().get(0).getName + " " + "eingesetzt und hat" + " " + App.getSpielerMoves().get(0).getDamage() + " " + "angerichtet");  
     }
 
     @FXML
-    private void btnMove2(ActionEvent event) {
+    private void btnMove2(ActionEvent event) throws IOException {
         int g = new Random().nextInt(4);
         int nHP = App.getTrainerPokemon().get(0).getHealthPoints() - App.getSpielerMoves().get(1).getDamage();
         App.getTrainerPokemon().get(0).setHealthPoints(nHP);
@@ -123,11 +138,11 @@ public class KampfViewController implements Initializable {
         if(sHP < 0){
             switchSpielerPokemon();
         }
-    
+        //this.tfMenue.setText(App.getSpielerPokemon().get(0).getName() + " " + "hat" + " " + App.getSpielerMoves().get(1).getName + " " + "eingesetzt und hat" + " " + App.getSpielerMoves().get(1).getDamage() + " " + "angerichtet");
     }
 
     @FXML
-    private void btnMove3(ActionEvent event) {
+    private void btnMove3(ActionEvent event) throws IOException {
         int g = new Random().nextInt(4);
         int nHP = App.getTrainerPokemon().get(0).getHealthPoints() - App.getSpielerMoves().get(2).getDamage();
         App.getTrainerPokemon().get(0).setHealthPoints(nHP);
@@ -138,11 +153,11 @@ public class KampfViewController implements Initializable {
         if(sHP < 0){
             switchSpielerPokemon();
         }
-       
+       //this.tfMenue.setText(App.getSpielerPokemon().get(0).getName() + " " + "hat" + " " + App.getSpielerMoves().get(2).getName + " " + "eingesetzt und hat" + " " + App.getSpielerMoves().get(2).getDamage() + " " + "angerichtet");
     }
 
     @FXML
-    private void btnMove4(ActionEvent event) {
+    private void btnMove4(ActionEvent event) throws IOException {
         int g = new Random().nextInt(4);
         int nHP = App.getTrainerPokemon().get(0).getHealthPoints() - App.getSpielerMoves().get(3).getDamage();
         App.getTrainerPokemon().get(0).setHealthPoints(nHP);
@@ -153,6 +168,7 @@ public class KampfViewController implements Initializable {
         if(sHP < 0){
             switchSpielerPokemon();
         }
+        //this.tfMenue.setText(App.getSpielerPokemon().get(0).getName() + " " + "hat" + " " + App.getSpielerMoves().get(3).getName + " " + "eingesetzt und hat" + " " + App.getSpielerMoves().get(3).getDamage() + " " + "angerichtet");
     }
   }
 

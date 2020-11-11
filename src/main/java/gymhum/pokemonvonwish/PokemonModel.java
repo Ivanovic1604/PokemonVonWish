@@ -15,10 +15,10 @@ public class PokemonModel {
     
     private int healthPoints;
     private String name;
-    private String level;
+    private int level;
     private MoveModel moves;
    
-    public PokemonModel(int healthPoints, String name, String level, MoveModel moves, MoveModel moves2, MoveModel moves3, MoveModel moves4){
+    public PokemonModel(int healthPoints, String name, int level, MoveModel moves, MoveModel moves2, MoveModel moves3, MoveModel moves4){
         setHealthPoints(healthPoints);
         setName(name);
         setLevel(level);
@@ -45,11 +45,11 @@ public class PokemonModel {
         this.name = name;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 
